@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct DayPlanning{
+    var date: String
+    var budget: Double
+    
+}

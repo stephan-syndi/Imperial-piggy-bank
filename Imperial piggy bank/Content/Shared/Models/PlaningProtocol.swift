@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol PlaningProtocol{
+    var budget: Double {get}
+    
+}
