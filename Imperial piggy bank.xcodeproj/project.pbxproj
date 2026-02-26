@@ -165,8 +165,8 @@
 				4193E0AD2F34AE0000530575 /* Sources */,
 				4193E0AE2F34AE0000530575 /* Frameworks */,
 				4193E0AF2F34AE0000530575 /* Resources */,
-				417CC78E2F5041A2001231D8 /* Embed Foundation Extensions */,
 				F7CEA065CAEB66C661B63687 /* [CP] Embed Pods Frameworks */,
+				417CC78E2F5041A2001231D8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
