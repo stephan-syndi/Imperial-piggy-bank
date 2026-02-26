@@ -6,11 +6,66 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		417CC78D2F5041A2001231D8 /* notifications.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 417CC7862F5041A2001231D8 /* notifications.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCC3E3FBCDC5447C70026541 /* Pods_Imperial_piggy_bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74687AD6E8C8CDAFE81BFA /* Pods_Imperial_piggy_bank.framework */; };
+		E1DB7E98F67610882A3E9867 /* Pods_notifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9688ED10BCD99EBFD7978EA6 /* Pods_notifications.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		417CC78B2F5041A2001231D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4193E0A92F34AE0000530575 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 417CC7852F5041A2001231D8;
+			remoteInfo = notifications;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		417CC78E2F5041A2001231D8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				417CC78D2F5041A2001231D8 /* notifications.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0A74687AD6E8C8CDAFE81BFA /* Pods_Imperial_piggy_bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imperial_piggy_bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		417CC7862F5041A2001231D8 /* notifications.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = notifications.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4193E0B12F34AE0000530575 /* Imperial piggy bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Imperial piggy bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5162B4DB2A46C271C196E360 /* Pods-notifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notifications.release.xcconfig"; path = "Target Support Files/Pods-notifications/Pods-notifications.release.xcconfig"; sourceTree = "<group>"; };
+		86C546D468F24D11FEF4C24F /* Pods-Imperial piggy bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imperial piggy bank.release.xcconfig"; path = "Target Support Files/Pods-Imperial piggy bank/Pods-Imperial piggy bank.release.xcconfig"; sourceTree = "<group>"; };
+		8A62087075001798F27FD416 /* Pods-notifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notifications.debug.xcconfig"; path = "Target Support Files/Pods-notifications/Pods-notifications.debug.xcconfig"; sourceTree = "<group>"; };
+		9688ED10BCD99EBFD7978EA6 /* Pods_notifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2375070665C3846441EAEA /* Pods-Imperial piggy bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imperial piggy bank.debug.xcconfig"; path = "Target Support Files/Pods-Imperial piggy bank/Pods-Imperial piggy bank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		417CC7912F5041A2001231D8 /* Exceptions for "notifications" folder in "notifications" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 417CC7852F5041A2001231D8 /* notifications */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		417CC7872F5041A2001231D8 /* notifications */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				417CC7912F5041A2001231D8 /* Exceptions for "notifications" folder in "notifications" target */,
+			);
+			path = notifications;
+			sourceTree = "<group>";
+		};
 		4193E0B32F34AE0000530575 /* Imperial piggy bank */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Imperial piggy bank";
@@ -19,21 +74,42 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		417CC7832F5041A2001231D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1DB7E98F67610882A3E9867 /* Pods_notifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4193E0AE2F34AE0000530575 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC3E3FBCDC5447C70026541 /* Pods_Imperial_piggy_bank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35C3E3E7C9488D6FBF85E57E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A74687AD6E8C8CDAFE81BFA /* Pods_Imperial_piggy_bank.framework */,
+				9688ED10BCD99EBFD7978EA6 /* Pods_notifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4193E0A82F34AE0000530575 = {
 			isa = PBXGroup;
 			children = (
 				4193E0B32F34AE0000530575 /* Imperial piggy bank */,
+				417CC7872F5041A2001231D8 /* notifications */,
 				4193E0B22F34AE0000530575 /* Products */,
+				A8C0D46521A8C62ED6499143 /* Pods */,
+				35C3E3E7C9488D6FBF85E57E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,31 +117,66 @@
 			isa = PBXGroup;
 			children = (
 				4193E0B12F34AE0000530575 /* Imperial piggy bank.app */,
+				417CC7862F5041A2001231D8 /* notifications.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A8C0D46521A8C62ED6499143 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD2375070665C3846441EAEA /* Pods-Imperial piggy bank.debug.xcconfig */,
+				86C546D468F24D11FEF4C24F /* Pods-Imperial piggy bank.release.xcconfig */,
+				8A62087075001798F27FD416 /* Pods-notifications.debug.xcconfig */,
+				5162B4DB2A46C271C196E360 /* Pods-notifications.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4193E0B02F34AE0000530575 /* Imperial piggy bank */ = {
+		417CC7852F5041A2001231D8 /* notifications */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4193E0BC2F34AE0200530575 /* Build configuration list for PBXNativeTarget "Imperial piggy bank" */;
+			buildConfigurationList = 417CC7922F5041A2001231D8 /* Build configuration list for PBXNativeTarget "notifications" */;
 			buildPhases = (
-				4193E0AD2F34AE0000530575 /* Sources */,
-				4193E0AE2F34AE0000530575 /* Frameworks */,
-				4193E0AF2F34AE0000530575 /* Resources */,
+				07C5A6C9944A8DB2B2743E6F /* [CP] Check Pods Manifest.lock */,
+				417CC7822F5041A2001231D8 /* Sources */,
+				417CC7832F5041A2001231D8 /* Frameworks */,
+				417CC7842F5041A2001231D8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				417CC7872F5041A2001231D8 /* notifications */,
+			);
+			name = notifications;
+			productName = notifications;
+			productReference = 417CC7862F5041A2001231D8 /* notifications.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4193E0B02F34AE0000530575 /* Imperial piggy bank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4193E0BC2F34AE0200530575 /* Build configuration list for PBXNativeTarget "Imperial piggy bank" */;
+			buildPhases = (
+				E5FBFF57D4AD5FADA28B365F /* [CP] Check Pods Manifest.lock */,
+				4193E0AD2F34AE0000530575 /* Sources */,
+				4193E0AE2F34AE0000530575 /* Frameworks */,
+				4193E0AF2F34AE0000530575 /* Resources */,
+				417CC78E2F5041A2001231D8 /* Embed Foundation Extensions */,
+				F7CEA065CAEB66C661B63687 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				417CC78C2F5041A2001231D8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
 				4193E0B32F34AE0000530575 /* Imperial piggy bank */,
 			);
 			name = "Imperial piggy bank";
-			packageProductDependencies = (
-			);
 			productName = "Imperial piggy bank";
 			productReference = 4193E0B12F34AE0000530575 /* Imperial piggy bank.app */;
 			productType = "com.apple.product-type.application";
@@ -80,6 +191,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					417CC7852F5041A2001231D8 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
 					4193E0B02F34AE0000530575 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
@@ -100,11 +214,19 @@
 			projectRoot = "";
 			targets = (
 				4193E0B02F34AE0000530575 /* Imperial piggy bank */,
+				417CC7852F5041A2001231D8 /* notifications */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		417CC7842F5041A2001231D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4193E0AF2F34AE0000530575 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,7 +236,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07C5A6C9944A8DB2B2743E6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-notifications-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5FBFF57D4AD5FADA28B365F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Imperial piggy bank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7CEA065CAEB66C661B63687 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Imperial piggy bank/Pods-Imperial piggy bank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Imperial piggy bank/Pods-Imperial piggy bank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Imperial piggy bank/Pods-Imperial piggy bank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		417CC7822F5041A2001231D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4193E0AD2F34AE0000530575 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +321,85 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		417CC78C2F5041A2001231D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 417CC7852F5041A2001231D8 /* notifications */;
+			targetProxy = 417CC78B2F5041A2001231D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		417CC78F2F5041A2001231D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A62087075001798F27FD416 /* Pods-notifications.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = notifications/notifications.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = notifications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = notifications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lifebalanceteam.bank-tower.notifications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		417CC7902F5041A2001231D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5162B4DB2A46C271C196E360 /* Pods-notifications.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = notifications/notifications.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = notifications/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = notifications;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lifebalanceteam.bank-tower.notifications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		4193E0BA2F34AE0200530575 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -246,9 +521,11 @@
 		};
 		4193E0BD2F34AE0200530575 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD2375070665C3846441EAEA /* Pods-Imperial piggy bank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Imperial piggy bank/Imperial piggy bank.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -285,9 +562,11 @@
 		};
 		4193E0BE2F34AE0200530575 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C546D468F24D11FEF4C24F /* Pods-Imperial piggy bank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Imperial piggy bank/Imperial piggy bank.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -325,6 +604,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		417CC7922F5041A2001231D8 /* Build configuration list for PBXNativeTarget "notifications" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417CC78F2F5041A2001231D8 /* Debug */,
+				417CC7902F5041A2001231D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4193E0AC2F34AE0000530575 /* Build configuration list for PBXProject "Imperial piggy bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

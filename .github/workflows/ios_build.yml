@@ -1,0 +1,120 @@
+name: Build iOS (native)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # - name: Select Xcode 16.2
+      #   run: |
+      #     sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+      #     xcodebuild -version
+      #     swift --version
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Setup SSH for match (CI_Core style)
+        env:
+          MATCH_DEPLOY_KEY: ${{ secrets.MATCH_DEPLOY_KEY }}
+          MATCH_REPOSITORY: ${{ secrets.MATCH_REPOSITORY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${MATCH_DEPLOY_KEY:-}" ]; then
+            echo "⚠️  MATCH_DEPLOY_KEY is empty, skipping SSH setup"
+            exit 0
+          fi
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${MATCH_DEPLOY_KEY}"
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          umask 177
+          echo "${MATCH_DEPLOY_KEY}" > ~/.ssh/id_match
+          chmod 600 ~/.ssh/id_match
+
+          {
+            echo "Host github.com"
+            echo "  HostName github.com"
+            echo "  IdentityFile ~/.ssh/id_match"
+            echo "  IdentitiesOnly yes"
+            echo "  StrictHostKeyChecking accept-new"
+          } > ~/.ssh/config
+          chmod 600 ~/.ssh/config
+
+          ssh-keyscan -t rsa,ecdsa,ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      # 👉 ВОТ СЮДА ДОБАВЛЯЕМ
+      - name: Create keychain
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          security set-keychain-settings -lut 21600 build.keychain
+
+      - name: Check identities BEFORE match
+        run: security find-identity -v -p codesigning
+
+      # 👉 match будет вызван внутри fastlane ios build → sync_certificates
+      # поэтому мы проверяем профили ПОСЛЕ sync_certificates, но ДО сборки
+      # для этого добавим отдельный lane или вызовем sync_certificates вручную
+
+      - name: Sync certificates only
+        env:
+          APPSTORE_ISSUER_ID:  ${{ secrets.APPSTORE_ISSUER_ID }}
+          APPSTORE_KEY_ID:     ${{ secrets.APPSTORE_KEY_ID }}
+          APPSTORE_P8:         ${{ secrets.APPSTORE_P8 }}
+          IOS_BUNDLE_ID:       ${{ secrets.IOS_BUNDLE_ID }}
+          MATCH_REPOSITORY:    ${{ secrets.MATCH_REPOSITORY }}
+          MATCH_PASSWORD:      ${{ secrets.MATCH_PASSWORD }}
+          MATCH_DEPLOY_KEY:    ${{ secrets.MATCH_DEPLOY_KEY }}
+        run: |
+          bundle exec fastlane ios sync_certificates
+
+      - name: Check identities AFTER match
+        run: security find-identity -v -p codesigning
+
+      - name: List provisioning profiles
+        run: ls -la ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles || echo "No profiles" 
+
+      - name: Inspect provisioning profiles
+        run: |
+          for profile in ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles/*.mobileprovision; do
+            echo "🔍 Checking $profile"
+            security cms -D -i "$profile" | grep -A2 application-identifier
+            security cms -D -i "$profile" | grep -A2 aps-environment || echo "No aps-environment entitlement"
+            echo "--------------------------------------"
+          done 
+
+      - name: Install CocoaPods dependencies
+        run: pod install --repo-update --no-ansi --verbose
+
+      # 👉 Теперь запускаем сборку
+      - name: Build (нативный через Fastlane)
+        env:
+          APPSTORE_ISSUER_ID:  ${{ secrets.APPSTORE_ISSUER_ID }}
+          APPSTORE_KEY_ID:     ${{ secrets.APPSTORE_KEY_ID }}
+          APPSTORE_P8:         ${{ secrets.APPSTORE_P8 }}
+          IOS_BUNDLE_ID:       ${{ secrets.IOS_BUNDLE_ID }}
+          GH_PAT:              ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY:   ${{ github.repository }}
+          MATCH_REPOSITORY:    ${{ secrets.MATCH_REPOSITORY }}
+          MATCH_PASSWORD:      ${{ secrets.MATCH_PASSWORD }}
+          MATCH_DEPLOY_KEY:    ${{ secrets.MATCH_DEPLOY_KEY }}
+          IOS_SCHEME:          ${{ secrets.IOS_SCHEME }}
+          PROJECT_NAME:        ${{ secrets.PROJECT_NAME }}
+          BUILD_NUMBER:        ${{ github.run_number }}
+          XCODE_WORKSPACE:     ${{ secrets.XCODE_WORKSPACE }}
+          GIT_FULL_NAME:       ci-bot
+          GIT_USER_EMAIL:      ci-bot@local
+        run: |
+          git config --global user.name  "${GIT_FULL_NAME}"
+          git config --global user.email "${GIT_USER_EMAIL}"
+          bundle exec fastlane ios build
